@@ -1,21 +1,24 @@
-import React from 'react'
-import {useState} from 'react';
+import React, { useState } from 'react'
+
+import Button from 'react-bootstrap/Button';
+
 
 const ItemCount = () => {
     const [count, setCount] = useState(0);
-    //const [fecha, setFecha] = useState(Date());
+
 
     const handleCount = () => {
         setCount(count + 1);
     }
 
+console.log(count)
 
     return (
         <div>
-            <h1> Click: {count}</h1>
-            <button onClick={handleCount}> Click </button>
+            {//<Button variant="primary" onClick={handleCount}> Agregar al carrito </Button>
+            }
         </div>
-    )
+)
 }
 
 export default ItemCount

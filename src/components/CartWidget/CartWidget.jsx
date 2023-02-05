@@ -1,9 +1,9 @@
-import { CiShoppingCart } from "react-icons/ci";
+import { FiShoppingCart } from "react-icons/fi";
 
 function CartWidget() {
   return (
     <div>
-      <CiShoppingCart /> 2
+       <FiShoppingCart /> 2
     </div>
   )
 }

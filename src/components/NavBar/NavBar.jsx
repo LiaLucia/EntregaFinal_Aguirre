@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link, NavLink } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
 
 
@@ -11,6 +12,9 @@ function NavBar() {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
     <Container>
     
+      
+
+      <NavLink to = '/'>  
       <Navbar.Brand href="#home">       
         <img
               src="/img/egyptiancat.png"
@@ -20,12 +24,14 @@ function NavBar() {
         />{' '}
         Bastet
       </Navbar.Brand>
+      </NavLink>
+
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="#calzado">Calzado</Nav.Link>
-          <Nav.Link href="#indumentaria">Indumentaria</Nav.Link>
-          <Nav.Link href="#accesorios">Accesorios</Nav.Link>
+          <NavLink to='/categoria/calzado' className={({isActive})=> isActive ? 'btn btn-light':'btn btn-dark'}>Calzado</NavLink>
+          <NavLink to='/categoria/indumentaria' className={({isActive})=> isActive ? 'btn btn-light':'btn btn-dark'}>Indumentaria</NavLink>
+          <NavLink to='/categoria/accesorios' className={({isActive})=> isActive ? 'btn btn-light':'btn btn-dark'}>Accesorios</NavLink>
           <NavDropdown title="Marcas" id="collasible-nav-dropdown">
             <NavDropdown.Item href="#marca/adidas">Adidas</NavDropdown.Item>
             <NavDropdown.Item href="#marca/puma">Puma</NavDropdown.Item>

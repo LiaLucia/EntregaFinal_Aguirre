@@ -1,31 +1,42 @@
-import { useState } from 'react'
+import { useCartContext } from '../../context/CartContext';
+import ItemCount from '../ItemCount/ItemCount';
 
-import Button from 'react-bootstrap/Button';
+import './ItemDetailItem.css'
 import Card from 'react-bootstrap/Card';
 
-const ItemDetailItem = (producto) => {
-  const [count, setCount] = useState(0);
 
+const ItemDetailItem = ( {product} ) => {
 
-    const handleCount = () => {
-        setCount(count + 1);
-    }
+  const { addCart } = useCartContext()
+
+  const onAdd = (cant) => {
+    addCart( { ...product, total: cant })
+  }
+  
   return (
-    <ul key={producto.producto.id}>
-      <Card style={{ width: '26rem' , margin:'5px'}}>
-        <Card.Body>
-          <Card.Title>{producto.producto.name}</Card.Title>
-          <Card.Img variant="top" src={producto.producto.foto} />
-          <Card.Text>
-            {producto.producto.descripcion}
-          </Card.Text>
-          <Card.Text>
-            $ {producto.producto.price}
-          </Card.Text>
-          <Button variant="primary"  >Agregar al carrito</Button>
-        </Card.Body>
-      </Card>
-</ul>
+    <div className ="row"> 
+      <div className="col-md-6">
+        <ul >
+          <Card className ="Card">
+            <Card.Body>
+              <Card.Title>{product.name}</Card.Title>
+              <Card.Img variant="top" src={product.pic} />
+              <Card.Text>
+                {product.desc}
+              </Card.Text>
+              <Card.Text>
+                $ {product.price}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          
+        </ul>
+    </div>
+    
+    <div className="col-md-6">
+      <ItemCount initial={1} stock = {product.stock} onAdd={onAdd}/>
+    </div>
+  </div>
   )
 }
 

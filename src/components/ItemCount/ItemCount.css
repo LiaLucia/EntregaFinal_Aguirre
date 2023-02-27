@@ -1,0 +1,16 @@
+.btnAdd {
+    columns: 4;
+    width: 100 !important;
+    display: grid !important;
+    
+}
+
+.btnCart{
+   
+    display: grid !important;
+
+}
+
+.alert{
+    margin:10px
+}

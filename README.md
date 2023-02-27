@@ -34,7 +34,7 @@ Las funcionalidades con las que cuenta son las siguientes:
 ## Demo
 Se subió el sitio en la plataforma [Netifly] al siguiente link: https://guileless-squirrel-0814db.netlify.app/
 
-## Autor:
+## Autor
 Lía Lucía Aguirre - aguirrel2011@gmail.com
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
